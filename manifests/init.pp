@@ -35,11 +35,14 @@
 #
 # Copyright 2015 Open Source Robotics Foundation, Inc.
 #
-class ros {
+# @param ros_base_package 
+# 
+class ros (
+  #String        $ros_base_package       = $ros::params::ros_base_package,
+) {
   require ros::params
   require ros::install
   require ros::rosdep
 
   $setup_file = "/opt/ros/${ros::params::ros_version}/setup.bash"
-
 }
